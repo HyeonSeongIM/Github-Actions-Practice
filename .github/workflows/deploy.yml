@@ -8,10 +8,19 @@ on:
   pull_request:
     branches: [main]
 
+# 1개 이상의 job 으로 구성되며 병렬적으로 구성됨
 jobs:
+
+  # job 식별 위한 ID
   My-deploy-job:
     runs-on: ubuntu-latest
 
+    # 특정 작업 하는 가장 작은 의미
     steps:
       - name: Hello world
         run : echo "Hello world"
+
+      - name: 여러줄 입력
+        run: |
+          echo "Good"
+          echo "Morning"
